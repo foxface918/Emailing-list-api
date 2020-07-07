@@ -32,7 +32,7 @@ router.post('/:userinfo', (req, res, next) =>{
     var userdata = {
         userdata: []
     };
-    let currentdata = fs.readFileSync('D:/TVZ email/API/Endpoints/userdata.json');
+    let currentdata = fs.readFileSync('JSON File directory');
     let parsedata = JSON.parse(currentdata);
     console.log((parsedata.userdata).length);
     for(var i = 0; i < (parsedata.userdata).length; i++){
@@ -48,9 +48,9 @@ router.post('/:userinfo', (req, res, next) =>{
     
     let data = JSON.stringify(userdata, null, 2);
     console.log(userdata);
-    fs.exists('D:/TVZ email/API/Endpoints/userdata.json', function(exists) {
+    fs.exists('JSON File directory', function(exists) {
         if(exists){
-            fs.writeFileSync('D:/TVZ email/API/Endpoints/userdata.json', data);
+            fs.writeFileSync('JSON File directory', data);
             
         }else{
             console.log('Error user data dosent exits');
