@@ -32,7 +32,7 @@ router.post('/:userinfo', (req, res, next) =>{
     var userdata = {
         userdata: []
     };
-    let currentdata = fs.readFileSync('JSON File directory');
+    let currentdata = fs.readFileSync('./userdata.json');
     let parsedata = JSON.parse(currentdata);
     console.log((parsedata.userdata).length);
     for(var i = 0; i < (parsedata.userdata).length; i++){
