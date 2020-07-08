@@ -48,9 +48,10 @@ router.post('/:userinfo', (req, res, next) =>{
     
     let data = JSON.stringify(userdata, null, 2);
     console.log(userdata);
+    //currently there has to be a file already made and have one entry in it like the one in the repository already.
     fs.exists('JSON File directory', function(exists) {
         if(exists){
-            fs.writeFileSync('JSON File directory', data);
+            fs.writeFileSync('./userdata.json', data);
             
         }else{
             console.log('Error user data dosent exits');
